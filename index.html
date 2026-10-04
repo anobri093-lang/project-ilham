@@ -118,6 +118,10 @@ box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 20%, transparent); rgba(91
     margin-bottom: 14px;
     display: block;
     border: 1px solid rgba(255,255,255,0.1);
+} .project.hidden { opacity: 0; }
+.project.show { animation: rise .6s ease backwards; }
+@keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
 }
     </style>
 </head>
@@ -194,7 +198,19 @@ box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 20%, transparent); rgba(91
 </div>
 
 </div>
+<script>
+const cards = document.querySelectorAll('.project');
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.remove('hidden');
+            e.target.classList.add('show');
+            io.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.15 });
+cards.forEach(c => { c.classList.add('hidden'); io.observe(c); });
+</script>
 
 </body>
 </html>
-```
