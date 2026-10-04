@@ -56,9 +56,17 @@ min-height: 100vh;
 .project:nth-of-type(1) { --accent: #38bdf8; }
 .project:nth-of-type(2) { --accent: #f472b6; }
 .project:nth-of-type(3) { --accent: #fb7185; }
+.project:nth-of-type(4) { --accent: #facc15; }
         .project h2 {
             margin: 0 0 8px;
         color: var(--accent);
+}
+.icon {
+    display: inline-block;
+    animation: float 2.4s ease-in-out infinite;
+}
+@keyframes float {
+    50% { transform: translateY(-4px); }
 }
 
         .project p {
@@ -111,7 +119,8 @@ min-height: 100vh;
     <p class="subtitle">Kumpulan project HTML saya</p>
 
     <div class="project">
-        <h2>🎨 Animasi</h2>
+        <h2><span class="icon">🎨</span> Animasi</h2>
+
         <p>Project animasi berbasis HTML.</p>
 
         <div class="buttons">
@@ -120,7 +129,7 @@ min-height: 100vh;
     </div>
 
     <div class="project">
-        <h2>🌸 Bunga</h2>
+        <h2><span class="icon">🌸</span> Bunga</h2>
         <p>Project animasi bunga.</p>
 
         <div class="buttons">
@@ -129,7 +138,7 @@ min-height: 100vh;
     </div>
 
     <div class="project">
-        <h2>❤️ Love</h2>
+        <h2><span class="icon">❤️</span> Love</h2>
         <p>Project animasi love.</p>
 
         <div class="buttons">
@@ -138,7 +147,7 @@ min-height: 100vh;
     </div>
 
     <div class="project">
-        <h2>🪐 Tata Surya</h2>
+        <h2><span class="icon">🪐</span> Tata Surya</h2>
         <p>Project simulasi tata surya.</p>
 
         <div class="buttons">
